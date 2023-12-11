@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="top"></div>
+  <div class="fullscreen-bg" >
+    <div
+      class="fullscreen-bg-img"></div>
+  </div>
+
+  <div class="foreground-div">
+    <nav>
+      <div class="logo" >
+        <img src="RVUlogo.png" style="width: 122px;" alt="Logo" />
+        <img src="header-logo.png" style="background-color: white; width: 66px;" alt="Logo" />
+      </div>
+      <div class="links">
+        <a href="#top">HOME</a>
+        <a href="#about">ABOUT US</a>
+        <a href="#game">GAMES</a>
+        <a href="./game/index.html" id="login">Lets PLAY</a>
+      </div>
+    </nav>
+    <div class="text-div">
+      <img src="My project-1.png" alt="">
+      <img class="rotatingimg" src="WhatsApp Image 2023-07-12 at 16.23.39-fotor-bg-remover-20230712163336.png" alt="">
+      <h4 >POLISH</h4>
+      <h6 style="margin-bottom: 160px">
+        Potential Of Logic In Speech and Hearing-Impaired
+      </h6>
+
+      
+      <div id="about" class="about">
+        <div style="display: flex; justify-content: space-evenly">
+          <div class="info" style="text-align: center; color: black;">
+            <h6 style="color: yellowgreen;">
+                About POLISH
+            </h6>        
+            <hr>
+            “POLISH” is a project being done for a For-Profit Organization in Kochi, Kerala called
+“Oorjja”(https://www.oorjja.org/). This organization is aimed at providing a livelihood for
+the people above 15 years of age, with speech & hearing disability,who enrol with them.
+Oorjja is dedicated to finding the right skill of the student and providing training to polish
+these skills so that they can be directed to the right job that is suitable for them. As part
+of this vision, our team at Ramaiah Institute of Technology, was entrusted with the task
+of building a game based application which will find out the inherent logical skills of a
+student enrolled with Oorjja.
+          </div>
+          <div class="pic" style="padding-left: 30px; padding-top: 11.2%;">
+            <img
+            style=" width: 70vh; border-radius: 15px;"
+              src="https://previews.123rf.com/images/dizanna/dizanna2004/dizanna200400203/143717152-special-education-word-cloud-collage-education-concept-background.jpg"
+              alt="disability pic"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="quoteback"></div>
+        <div class="quote-text">
+          “People with disabilities deserve the chance to build a life for themselves in the communities which they choose to live.” –Barack Obama
+        </div>
+      </div>
+      <div class="cards-holder">
+        <div style="font-size: 0;">        <h6>GAMES</h6><br>
+        </div>
+        <div id="game" class="cards">
+        <div class="card">
+          <img src="level1 (2).png" alt="Card Image" />
+          <h5>LEVEL 1</h5>
+          <p>
+            Count the Shapes, <br> Join the Dots, <br> Words, Gears.
+          </p>
+          <a href="./game/index.html">Play</a>
+        </div>
+        <div class="card">
+          <img src="level2.png" alt="Card Image" />
+          <h5>LEVEL 2</h5>
+          <p>
+            Sequence Detction,<br> Matchsticks, <br>Prime Labyrinth
+          </p>
+          <a href="./game/index.html">Play</a>
+        </div>
+        <div class="card">
+          <img src="https://dharmamerchantservices.com/wp-content/uploads/2015/05/number3-1.png" alt="Card Image" />
+          <h5>LEVEL 3</h5>
+          <p>
+            Tower of Hanoi,<br> Magic Square, <br>2048
+          </p>
+          <a href="./game/index.html">Play</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <script>function scrollToSection(e) {
+    e.preventDefault();
+  
+    const targetId = this.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+  
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  }
+  
+  const anchorTags = document.querySelectorAll("a[href^='#']");
+  anchorTags.forEach(anchor => {
+    anchor.addEventListener("click", scrollToSection);
+  });
+  
+  // Add the "active" class to the navigation link of the current section
+  window.addEventListener("scroll", function () {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".links a");
+  
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+  
+      if (window.pageYOffset >= top - height / 2 && window.pageYOffset < top + height / 2) {
+        const targetId = section.getAttribute("id");
+        navLinks.forEach(link => link.classList.remove("active"));
+        const activeLink = document.querySelector(`.links a[href="#${targetId}"]`);
+        if (activeLink) {
+          activeLink.classList.add("active");
+        }
+      }
+    });
+  });
+  
+  </script>
+</body>
+</html>
